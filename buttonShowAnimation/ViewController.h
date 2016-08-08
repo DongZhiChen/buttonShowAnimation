@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "V_ShowShare.h"
 
 @interface ViewController : UIViewController
+
+- (IBAction)BTN_Show:(id)sender;
 
 
 @end

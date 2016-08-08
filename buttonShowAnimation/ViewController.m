@@ -8,7 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+
+    V_ShowShare *share;
+}
 
 @end
 
@@ -17,11 +20,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)BTN_Show:(id)sender {
+    
+    if( !share ){
+    
+        share = [[V_ShowShare alloc ] init];
+        share.shareBlock = ^(){
+            
+            NSLog(@"share");
+            
+        };
+        
+        [share createButtonWithButtonImages:@[@"1",@"2",@"3",@"4",@"5",@"6"]];
+        
+    }
+   
+    [self.view addSubview:share];
+    
+    [share showShareView];
+    
+}
 @end
